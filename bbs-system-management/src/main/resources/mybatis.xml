@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.4//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<!-- 全局启用或禁用延迟加载。当禁用时，所有关联对象都会即时加载 -->
+		<setting name="lazyLoadingEnabled" value="true" />
+		<!-- 当启用时，有延迟加载属性的对象在被调用时，将会完全加载任意属性。否则，每种属性将会按需要加载。 -->
+		<setting name="aggressiveLazyLoading" value="false" />
+		<!-- 允许或不允许多种结果集从一个单独的语句中返回（需要适合的驱动） -->
+		<setting name="multipleResultSetsEnabled" value="true" />
+		<!-- 使用列标签代替列名。不同的驱动在这方面表现不同。 -->
+		<setting name="useColumnLabel" value="true" />
+		<!-- 指定MyBatis如何自动映射列到字段/属性。PARTIAL只会自动映射简单，没有嵌套的结果。FULL会自动映射任意复杂的结果。 -->
+		<setting name="autoMappingBehavior" value="FULL" />
+		<!-- 配置默认的执行器。SIMPLE执行器没有什么特别之处。REUSE执行器重用预处理语句。BATCH执行器重用语句和批量更新。 -->
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		<!-- 设置超时时间，它决定驱动等待一个数据库响应的时间 -->
+		<setting name="defaultStatementTimeout" value="60000" />
+		<!-- 允许使用自定义的主键值(比如由程序生成的UUID 32位编码作为键值)，数据表的PK生成策略将被覆盖 -->
+		<setting name="useGeneratedKeys" value="true" />
+		<!-- [是否 启用  数据中 A_column 自动映射 到 java类中驼峰命名的属性 default:fasle] -->  
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- oracl中字段为空处理 -->
+        <setting name="jdbcTypeForNull" value="NULL"/> 
+        <!-- 参数名 -->
+        <setting name="useActualParamName" value="false"/>
+	</settings>
+	
+	<!-- 在Mapper文件中使用OSCache缓存：<cache type="org.mybatis.caches.oscache.OSCache"/> -->	
+	<typeAliases>
+		<typeAlias type="java.util.Date" alias="Date" />
+		<typeAlias type="java.lang.Integer" alias="Integer" />
+		<typeAlias type="java.lang.Long" alias="Long" />
+		<typeAlias type="java.lang.Double" alias="Double" />
+		<typeAlias type="java.lang.String" alias="String" />
+	</typeAliases>
+
+    <!--typeHandlers>
+    	<typeHandler handler="com.airport.kernel.mybatis.BlobTypeHandler" javaType="string" jdbcType="BLOB"/>
+	</typeHandlers-->
+	<!--查询结果为MAP时key按驼峰原则转化-->
+    <!--objectWrapperFactory type="com.airport.kernel.mybatis.MapWrapperFactory"/>
+	<plugins>
+        <plugin interceptor="com.airport.kernel.mybatis.PagingPlugin">
+			<property name="adapter" value="com.airport.kernel.mybatis.OraclePagingAdapter" />
+        </plugin>
+    </plugins-->
+</configuration>

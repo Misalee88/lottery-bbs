@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bbs-model/bbs-model.iml" filepath="$PROJECT_DIR$/bbs-model/bbs-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-system-management/bbs-system-management.iml" filepath="$PROJECT_DIR$/bbs-system-management/bbs-system-management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bbs-weibo/bbs-weibo.iml" filepath="$PROJECT_DIR$/bbs-weibo/bbs-weibo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/framework-core/framework-core.iml" filepath="$PROJECT_DIR$/framework-core/framework-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/lottery-bbs.iml" filepath="$PROJECT_DIR$/.idea/lottery-bbs.iml" />
+    </modules>
+  </component>
+</project>
