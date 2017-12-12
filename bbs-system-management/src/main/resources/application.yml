@@ -43,9 +43,10 @@ spring:
     log-dir: classpath:tx-logs
     transaction-manager-id: txManager
   mybatis:
-    package: com.zhegu.lottery.bbs.dao
-    mapper_location: classpath*:mapper/mysql/*.xml
-    config_localtion: classpath:mybatis.xml
+    mapperPackage: com.zhegu.lottery.bbs.dao
+    mapperLocation: classpath*:mapper/mysql/*.xml
+    configLocation: classpath:mybatis.xml
+    typeAliasesPackage: com.zhegu.lottery.bbs.orm
 
 
 

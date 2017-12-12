@@ -36,14 +36,14 @@
 		<typeAlias type="java.lang.String" alias="String" />
 	</typeAliases>
 
-    <!--typeHandlers>
-    	<typeHandler handler="com.airport.kernel.mybatis.BlobTypeHandler" javaType="string" jdbcType="BLOB"/>
-	</typeHandlers-->
+	<typeHandlers>
+		<typeHandler handler="com.zhegu.core.frameworkcore.mybatils.BlobTypeHandler" javaType="string" jdbcType="BLOB"/>
+	</typeHandlers>
 	<!--查询结果为MAP时key按驼峰原则转化-->
-    <!--objectWrapperFactory type="com.airport.kernel.mybatis.MapWrapperFactory"/>
+	<objectWrapperFactory type="com.zhegu.core.frameworkcore.mybatils.MapWrapperFactory"/>
 	<plugins>
-        <plugin interceptor="com.airport.kernel.mybatis.PagingPlugin">
-			<property name="adapter" value="com.airport.kernel.mybatis.OraclePagingAdapter" />
-        </plugin>
-    </plugins-->
+		<plugin interceptor="com.zhegu.core.frameworkcore.mybatils.PagingPlugin">
+			<property name="adapter" value="com.zhegu.core.frameworkcore.mybatils.MysqlPagingAdapter" />
+		</plugin>
+	</plugins>
 </configuration>
