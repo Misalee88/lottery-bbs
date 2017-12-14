@@ -44,7 +44,7 @@ spring:
     transaction-manager-id: txManager
   mybatis:
     mapperPackage: com.zhegu.lottery.bbs.dao
-    mapperLocation: classpath*:mapper/mysql/*.xml
+    mapperLocation: classpath:mapper/mysql/*.xml
     configLocation: classpath:mybatis.xml
     typeAliasesPackage: com.zhegu.lottery.bbs.orm
 

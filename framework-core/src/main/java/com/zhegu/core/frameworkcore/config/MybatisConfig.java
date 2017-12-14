@@ -22,8 +22,8 @@ public class MybatisConfig {
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-        mapperScannerConfigurer.setBasePackage(mybatisProperties.getMapperPackage());
-//        mapperScannerConfigurer.setBasePackage("com.zhegu.lottery.bbs.dao");
+//        mapperScannerConfigurer.setBasePackage(mybatisProperties.getMapperPackage());
+        mapperScannerConfigurer.setBasePackage("com.zhegu.lottery.bbs.dao");
         return mapperScannerConfigurer;
     }
 }

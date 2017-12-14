@@ -23,11 +23,11 @@ public class DataSourceProperties {
     private Integer initialSize;
     private Integer minIdle;
     private Integer maxActive;
-    private Long maxWait;
-    private Long timeBetweenEvictionRunsMillis;
+    private Integer maxWait;
+    private Integer timeBetweenEvictionRunsMillis;
     private Integer minEvictableIdleTimeMillis;
     private String validationQuery;
-    private Long validationQueryTimeout;
+    private Integer validationQueryTimeout;
     private boolean testWhileIdle;
     private boolean testOnBorrow;
     private boolean testOnReturn;
