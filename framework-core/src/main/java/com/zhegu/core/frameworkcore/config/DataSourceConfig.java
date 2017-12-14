@@ -1,9 +1,10 @@
-package com.zhegu.lottery.bbs.config;
+package com.zhegu.core.frameworkcore.config;
 
-//import com.zhegu.lottery.bbs.properties.MybatisPeoperties;
+import com.zhegu.core.frameworkcore.properties.MybatisProperties;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
-import org.springframework.beans.factory.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.jta.atomikos.AtomikosDataSourceBean;
 import org.springframework.context.annotation.*;
@@ -21,11 +22,11 @@ import java.util.Properties;
  */
 @Configuration
 @EnableTransactionManagement
-//@EnableConfigurationProperties({MybatisPeoperties.class})
+@EnableConfigurationProperties({MybatisProperties.class})
 public class DataSourceConfig {
 
-//    @Autowired
-//    private MybatisPeoperties peoperties;
+    @Autowired
+    private MybatisProperties properties;
 
     @Bean(name="dataSource")
     @Autowired
@@ -87,16 +88,16 @@ public class DataSourceConfig {
     public SqlSessionFactory getSqlSessionFactory(@Qualifier("dataSource") DataSource ds) throws Exception {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(ds);
-//        sessionFactory.setTypeAliasesPackage(peoperties.getTypeAliasesPackage());
-//        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-//                .getResources(peoperties.getMapperLocation()));
-//        sessionFactory.setConfigLocation(new PathMatchingResourcePatternResolver()
-//                .getResource(peoperties.getConfigLocation()));
-        sessionFactory.setTypeAliasesPackage("com.zhegu.lottery.bbs.orm");
+        sessionFactory.setTypeAliasesPackage(properties.getTypeAliasesPackage());
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources("classpath*:mapper/mysql/*.xml"));
+                .getResources(properties.getMapperLocation()));
         sessionFactory.setConfigLocation(new PathMatchingResourcePatternResolver()
-                .getResource("classpath:mybatis.xml"));
+                .getResource(properties.getConfigLocation()));
+//        sessionFactory.setTypeAliasesPackage("com.zhegu.lottery.bbs.orm");
+//        sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
+//                .getResources("classpath*:mapper/mysql/*.xml"));
+//        sessionFactory.setConfigLocation(new PathMatchingResourcePatternResolver()
+//                .getResource("classpath:mybatis.xml"));
         return sessionFactory.getObject();
     }
 

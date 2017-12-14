@@ -1,6 +1,6 @@
-package com.zhegu.lottery.bbs.config;
+package com.zhegu.core.frameworkcore.config;
 
-//import com.zhegu.lottery.bbs.properties.MybatisPeoperties;
+import com.zhegu.core.frameworkcore.properties.MybatisProperties;
 import org.mybatis.spring.mapper.MapperScannerConfigurer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -13,17 +13,17 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 @AutoConfigureAfter(DataSourceConfig.class)
-//@EnableConfigurationProperties({MybatisPeoperties.class})
+@EnableConfigurationProperties({MybatisProperties.class})
 public class MybatisConfig {
-//    @Autowired
-//    private MybatisPeoperties peoperties;
+    @Autowired
+    private MybatisProperties properties;
 
     @Bean
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-//        mapperScannerConfigurer.setBasePackage(peoperties.getMapperPackage());
-        mapperScannerConfigurer.setBasePackage("com.zhegu.lottery.bbs.dao");
+        mapperScannerConfigurer.setBasePackage(properties.getMapperPackage());
+//        mapperScannerConfigurer.setBasePackage("com.zhegu.lottery.bbs.dao");
         return mapperScannerConfigurer;
     }
 }

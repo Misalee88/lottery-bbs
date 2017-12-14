@@ -8,7 +8,7 @@
 // */
 //@ConfigurationProperties(prefix="spring.mybatis")
 //@Primary
-//public class MybatisPeoperties {
+//public class MybatisProperties {
 //
 //    private String mapperPackage;
 //    private String mapperLocation;
