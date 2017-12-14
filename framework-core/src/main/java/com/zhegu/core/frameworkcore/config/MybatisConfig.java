@@ -16,13 +16,13 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties({MybatisProperties.class})
 public class MybatisConfig {
     @Autowired
-    private MybatisProperties properties;
+    private MybatisProperties mybatisProperties;
 
-    @Bean
+    @Bean(name="mapperScannerConfigurer")
     public MapperScannerConfigurer mapperScannerConfigurer() {
         MapperScannerConfigurer mapperScannerConfigurer = new MapperScannerConfigurer();
         mapperScannerConfigurer.setSqlSessionFactoryBeanName("sqlSessionFactory");
-        mapperScannerConfigurer.setBasePackage(properties.getMapperPackage());
+        mapperScannerConfigurer.setBasePackage(mybatisProperties.getMapperPackage());
 //        mapperScannerConfigurer.setBasePackage("com.zhegu.lottery.bbs.dao");
         return mapperScannerConfigurer;
     }

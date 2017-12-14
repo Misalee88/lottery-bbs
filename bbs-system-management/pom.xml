@@ -6,7 +6,7 @@
 	<groupId>com.zhegu.lottery</groupId>
 	<artifactId>bbs-system-management</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 
 	<name>bbs-system-management</name>
 	<description>彩票论坛系统管理</description>
@@ -26,6 +26,13 @@
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>

@@ -1,12 +1,17 @@
 package com.zhegu.core.frameworkcore.page;
 
+import lombok.Getter;
+import lombok.Setter;
+
 /**
  * <p>
  * 分页信息
  * </p>
  * 
- * @author 张良(zhang.l1@haihangyun.com) 2017年6月16日
+ * @author ZHIQIANG LI
  */
+@Getter
+@Setter
 public class Page {
 
 	/** 是否分页 */
@@ -19,17 +24,5 @@ public class Page {
 	public String order;
 
 	public PageR r = new PageR();
-
-	public void setNotPage(boolean notPage) {
-		this.notPage = notPage;
-	}
-
-	public void setSort(String sort) {
-		this.sort = sort;
-	}
-
-	public void setOrder(String order) {
-		this.order = order;
-	}
 
 }

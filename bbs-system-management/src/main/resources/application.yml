@@ -9,7 +9,7 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.xa.DruidXADataSource
     druid:
-      dataSorce:
+      dataSource:
         name: dataSource
         driverClassName: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost:3306/vip
